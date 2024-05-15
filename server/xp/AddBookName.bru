@@ -1,0 +1,19 @@
+meta {
+  name: AddBookName
+  type: http
+  seq: 3
+}
+
+post {
+  url: localhost:3000/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 3,
+    "name": "ok",
+    "author": "hello"
+  }
+}
