@@ -1,17 +1,19 @@
 import axios from "axios";
 import BookCard from "./BookCard";
 import '../styles/App.css'
+import NewBook from "./NewBook";
 const { useState, useEffect } = require('react');
 
 export default function App() {
   
-  var [books, setBooks] = useState(["D"]);
+  var [books, setBooks] = useState([""]);
 
   useEffect(() => {
     axios.get("http://localhost:3001/").then((res) => {
         setBooks(res.data);
     })
   }, [])
+  
 
   return <div className = "main">
     <div className = "title">
@@ -22,15 +24,8 @@ export default function App() {
             return <BookCard key={book.idBooks} book = {book} />
           })}
     </div>
-    <div className = "newBook">
-      <div className = "newBookTitle">New Book</div>
-      <div className = "newBookInputs">
-        <input placeholder = "Title"/>
-        <input placeholder = "Author"/>
-      </div>
-        <button type = "submit">Submit</button>
-
-    </div>
+    <NewBook booksCount = {books.length} setBooks = {setBooks} />
+    
     </div>
 
 }
