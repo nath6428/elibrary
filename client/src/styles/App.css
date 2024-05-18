@@ -1,0 +1,41 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.bookCards{
+    display: flex;
+    flex-direction: row;
+    height: 70vh;
+}
+
+.newBook{
+    height: 18vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.newBookTitle{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newBookInputs{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
