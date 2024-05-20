@@ -17,9 +17,14 @@ function SQLFetch(){
 
 function SQLPost(id, name, author){
     
-    return pool.query("INSERT INTO library.books(idBooksddd, name, author) VALUES (?, ?, ?)", [id, name, author]);
+    return pool.query("INSERT INTO library.books(id, name, author) VALUES (?, ?, ?)", [id, name, author]);
 
 }
 
-module.exports = { SQLFetch, SQLPost };
+function SQLDelete(id){
+    
+    return pool.query(`DELETE FROM library.books WHERE id LIKE "${id}"`);
+}
+
+module.exports = { SQLFetch, SQLPost, SQLDelete };
 

@@ -2,11 +2,10 @@ import axios from "axios";
 import BookCard from "./BookCard";
 import '../styles/App.css'
 import NewBook from "./NewBook";
-const { useState, useEffect } = require('react');
-
+import React, { useState, useEffect } from 'react';
 export default function App() {
   
-  var [books, setBooks] = useState([""]);
+  var [books, setBooks] = useState([]);
 
   useEffect(() => {
     axios.get("http://localhost:3001/").then((res) => {
@@ -21,10 +20,10 @@ export default function App() {
     </div>
     <div className = "bookCards">
       {books.map((book) => {
-            return <BookCard key={book.idBooks} book = {book} />
+            return <BookCard key={book.id} book = {book} setBooks = {setBooks} />
           })}
     </div>
-    <NewBook booksCount = {books.length} setBooks = {setBooks} />
+    <NewBook setBooks = {setBooks} />
     
     </div>
 

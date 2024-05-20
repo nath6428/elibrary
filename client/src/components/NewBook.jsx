@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import { nanoid } from 'nanoid';
 
-function NewBook({ booksCount, setBooks }) {
+function NewBook({ setBooks }) {
     
     const [newBookData, setNewBookData] = useState({
-        "idBooks": {booksCount},
         "name": "",
         "author": ""
     })
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-
         setNewBookData({
             ...newBookData,
             [name]: value
@@ -20,9 +19,10 @@ function NewBook({ booksCount, setBooks }) {
     }
 
     const postNewBook = (data) => {
-        axios.post("http://localhost:3001/", newBookData).then((res) =>{
+      
+      console.log(newBookData);
+        axios.post("http://localhost:3001/", {...newBookData, type: "ADD"}).then((res) =>{
             setBooks((prevBooks) => { return [...prevBooks, newBookData]});
-            console.log(data);
         })
       }
     
