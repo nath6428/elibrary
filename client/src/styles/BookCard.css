@@ -4,14 +4,16 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: white;
+    background-color: #f5fffa;
     width: 300px;
     max-width: 300px;
+    min-width: 300px;
     height: 357px;
-    border: 4px solid;
     margin: 1vw;
-    background-image: url("../../public/book-cover.jpg");
+    background-image: url("../../public/book-cover2.png");
     background-position: cover;
     background-repeat:   no-repeat;
     color: white;
 }
+
+

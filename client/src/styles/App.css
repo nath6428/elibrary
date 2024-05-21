@@ -1,3 +1,19 @@
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url(https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2);
+}
+
+
+body{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: large;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f5fffa;
+    color: darkblue;
+}
+
 .main{
     display: flex;
     flex-direction: column;
@@ -16,10 +32,43 @@
 .bookCards{
     display: flex;
     flex-direction: row;
-    height: 70vh;
-    flex-wrap: wrap;
+    height: 60vh;
+    width: 90vw;
+    margin: 0 5vw 0 5vw;
     justify-content: center;
     align-items: center;
+    overflow-x: auto;
+    
+
+    --sb-track-color: #efefef;
+    --sb-thumb-color: #0a2e91;
+    --sb-size: 12px;
+
+    
+}
+
+
+::-webkit-scrollbar {
+    width: var(--sb-size);
+    height: var(--sb-size);
+}
+
+.bookCards::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 13px;
+}
+
+.bookCards::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 13px;
+
+}
+
+@supports not selector(::-webkit-scrollbar) {
+.bookCards {
+    scrollbar-color: var(--sb-thumb-color)
+                    var(--sb-track-color);
+}
 }
 
 .newBook{

@@ -18,12 +18,14 @@ function NewBook({ setBooks }) {
 
     }
 
-    const postNewBook = (data) => {
+    const postNewBook = () => {
       
-      console.log(newBookData);
+      if(newBookData.name !== "" && newBookData.author !== ""){
         axios.post("http://localhost:3001/", {...newBookData, type: "ADD"}).then((res) =>{
-            setBooks((prevBooks) => { return [...prevBooks, newBookData]});
+          setBooks((prevBooks) => { return [...prevBooks, newBookData]});
         })
+      }
+     
       }
     
     
