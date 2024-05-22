@@ -23,20 +23,27 @@ body{
 .title{
     
     display: flex;
-    height: 10vh;
+    font-size: 40px;
+    height: 20vh;
     justify-content: center;
     align-items: center;
 
+}
+
+.emptyMessage{
+    font-size: 40px;
+    margin: auto;
 }
 
 .bookCards{
     display: flex;
     flex-direction: row;
     height: 60vh;
-    width: 90vw;
-    margin: 0 5vw 0 5vw;
-    justify-content: center;
+    min-width: 90vw;
+    max-width: 90vw;
+    margin: 0vw 4vw 5vh 4vw;
     align-items: center;
+    justify-content: flex-start;
     overflow-x: auto;
     
 
@@ -46,6 +53,9 @@ body{
 
     
 }
+
+
+
 
 
 ::-webkit-scrollbar {
@@ -64,12 +74,6 @@ body{
 
 }
 
-@supports not selector(::-webkit-scrollbar) {
-.bookCards {
-    scrollbar-color: var(--sb-thumb-color)
-                    var(--sb-track-color);
-}
-}
 
 .newBook{
     height: 18vh;

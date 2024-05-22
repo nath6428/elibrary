@@ -10,9 +10,11 @@ export default function BookCard({ book, setBooks }){
     }
 
 
-    return <div className = "bookCard">
-        <button className = "deleteButton" onClick = {handleDelete}>x</button>
-        <div className = "bookName">{book.name}</div>
-        <div>{book.author}</div>
-    </div>
+    return (
+        <div className = "bookCard">
+            <button className = "deleteButton" onClick = {handleDelete}>Delete Book</button>
+            <div className = "bookName">{book.name}</div>
+            <div>{book.author}</div>
+        </div>
+    )
 }

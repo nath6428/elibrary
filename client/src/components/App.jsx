@@ -19,12 +19,11 @@ export default function App() {
       Local Library
     </div>
     <div className = "bookCards">
-      {books.map((book) => {
-            return <BookCard key={book.id} book = {book} setBooks = {setBooks} />
-          })}
+        {books.length === 0 ? <p className = "emptyMessage">No Books Found!</p> : books.map((book) => {
+          return <BookCard key={book.id} book = {book} setBooks = {setBooks} />
+            })}
     </div>
-    <NewBook setBooks = {setBooks} />
-    
+        <NewBook setBooks = {setBooks} />
     </div>
 
-}
+      }

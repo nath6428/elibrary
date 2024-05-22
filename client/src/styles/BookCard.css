@@ -1,19 +1,30 @@
 .bookCard{
 
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: #f5fffa;
     width: 300px;
-    max-width: 300px;
     min-width: 300px;
     height: 357px;
     margin: 1vw;
+    padding-right: 5vw;
     background-image: url("../../public/book-cover2.png");
     background-position: cover;
     background-repeat:   no-repeat;
     color: white;
+}
+
+.bookCard > :first-child{
+    position: absolute;
+    margin-bottom: 225px;
+}
+
+.deleteButton{
+    font-family: "Bebas Neue", sans-serif;
+    border-radius: 10px;
 }
 
 
